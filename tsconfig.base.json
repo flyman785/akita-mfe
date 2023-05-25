@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@akita-mfe/info-user": ["libs/info-user/src/index.ts"],
+      "@authentication": ["libs/authentication/src/index.ts"],
+      "@store/login": ["libs/stores/login-store/src/index.ts"],
+      "@stores/login": ["libs/stores/login/src/index.ts"],
+      "@stores/profile": ["libs/stores/profile/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
