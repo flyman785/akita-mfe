@@ -5,7 +5,6 @@ import {ProfileQueries, ProfileFacade} from '@stores/profile';
 @Component({
   selector: 'ai-mfe-home-entry',
   template: `
-    <akita-mfe-display-data></akita-mfe-display-data>
     <div>profile: {{profile$ | async | json}}</div>
     <button (click)="update()">update info</button>
   `,

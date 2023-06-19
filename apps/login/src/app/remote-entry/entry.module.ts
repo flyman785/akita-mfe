@@ -16,9 +16,7 @@ import {LoginStoreModule} from '@stores/login';
   imports: [
     CommonModule,
     RouterModule.forChild(remoteRoutes),
-    AuthenticationModule,
-    InfoUserModule,
-    LoginStoreModule.forStore('login')
+    AuthenticationModule
   ]
 })
 export class RemoteEntryModule {}

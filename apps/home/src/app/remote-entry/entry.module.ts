@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
 import { remoteRoutes } from './entry.routes';
-import {ProfileModule} from '@stores/profile';
-import {LoginStoreModule} from '@stores/login';
 import {InfoUserModule} from '@akita-mfe/info-user';
 
 @NgModule({
@@ -13,8 +11,6 @@ import {InfoUserModule} from '@akita-mfe/info-user';
   imports: [
     CommonModule,
     RouterModule.forChild(remoteRoutes),
-    ProfileModule,
-    LoginStoreModule.forStore('login1'),
     InfoUserModule
   ],
   providers: [],
