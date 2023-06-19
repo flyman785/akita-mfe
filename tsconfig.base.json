@@ -17,6 +17,7 @@
     "paths": {
       "@akita-mfe/info-user": ["libs/info-user/src/index.ts"],
       "@authentication": ["libs/authentication/src/index.ts"],
+      "@mfe/shared": ["libs/shared/src/index.ts"],
       "@store/login": ["libs/stores/login-store/src/index.ts"],
       "@stores/login": ["libs/stores/login/src/index.ts"],
       "@stores/profile": ["libs/stores/profile/src/index.ts"]

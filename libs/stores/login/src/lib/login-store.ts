@@ -1,7 +1,8 @@
-import {Inject, Injectable} from '@angular/core';
+import {Inject, Injectable, Optional} from '@angular/core';
 import { Store } from "@datorama/akita";
 import { LoginState } from "./login-interface";
 import {StoreNameToken} from './injection-token';
+import {mfePrefix} from '@mfe/shared';
 
 function createInitialState(): LoginState {
     return {
@@ -16,8 +17,9 @@ function createInitialState(): LoginState {
 })
 export class LoginStore extends Store<LoginState> {
     constructor(
-      @Inject(StoreNameToken) config: string
+      @Inject(StoreNameToken) config: string,
+      @Optional() @Inject(mfePrefix) prefix: string = ''
     ) {
-        super(createInitialState(), {name: config, resettable: true})
+        super(createInitialState(), {name: prefix + config, resettable: true})
     }
 }

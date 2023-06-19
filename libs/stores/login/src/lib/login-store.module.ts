@@ -9,12 +9,12 @@ import {StoreNameToken} from './injection-token';
   imports: [CommonModule]
 })
 export class LoginStoreModule {
-  static forStore(config: string): ModuleWithProviders<LoginStoreModule> {
+  static forStore(name: string): ModuleWithProviders<LoginStoreModule> {
 
     return {
       ngModule: LoginStoreModule,
       providers: [
-        {provide: StoreNameToken, useValue: config},
+        {provide: StoreNameToken, useValue: name},
         LoginFacade,
         LoginQueries,
         LoginStore

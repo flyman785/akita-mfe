@@ -7,6 +7,8 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'login',
-    loadChildren: () => import('login/Module').then((m) => m.RemoteEntryModule),
+    loadChildren: () => import('login/Module').then((m) => {
+      return m.entryModuleFactory('mfe_l')
+    }),
   }
 ];
