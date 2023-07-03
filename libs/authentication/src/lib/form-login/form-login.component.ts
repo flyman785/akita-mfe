@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {LoginFacade} from '@stores/login';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'akita-mfe-form-login',
@@ -14,8 +14,8 @@ export class FormLoginComponent {
     private formBuilder: FormBuilder
   ){
     this.form = this.formBuilder.group({
-      username: [],
-      password: []
+      username: [null, [Validators.required]],
+      password: [null, [Validators.required]]
     })
   }
 

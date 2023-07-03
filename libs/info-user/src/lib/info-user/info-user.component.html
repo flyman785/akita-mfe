@@ -1,2 +1,8 @@
-<div>profile: {{profile$ | async | json}}</div>
-<button (click)="update()">update info</button>
+<p-card header="Developer" *ngIf="(profile$ | async) as profile">
+  <p class="m-0">
+    Livello: {{profile.role}}
+    <br>
+    Sede: {{profile.city}}
+  </p>
+</p-card>
+<p-button (click)="update()">update info</p-button>

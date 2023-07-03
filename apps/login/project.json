@@ -16,7 +16,12 @@
         "tsConfig": "apps/login/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/login/src/favicon.ico", "apps/login/src/assets"],
-        "styles": ["apps/login/src/styles.scss"],
+        "styles": [
+          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeflex/primeflex.css",
+          "apps/login/src/styles.scss"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/login/webpack.config.js"

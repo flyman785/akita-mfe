@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
-import { logAction } from "@datorama/akita";
+import { logAction, resetStores } from "@datorama/akita";
 import { LoginState } from "./login-interface";
 import { LoginStore } from "./login-store";
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LoginFacade {
     constructor(
         private loginStore: LoginStore
@@ -15,6 +17,6 @@ export class LoginFacade {
     }
 
     clear(): void {
-        this.loginStore.reset();
+      resetStores();
     }
 }

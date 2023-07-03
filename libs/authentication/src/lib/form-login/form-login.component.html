@@ -1,5 +1,11 @@
-<form [formGroup]="form" (ngSubmit)="login()">
-  <input formControlName="username" type="text">
-  <input formControlName="password" type="password">
-  <button type="submit">login</button>
-</form>
+<div class="card" [formGroup]="form">
+  <div class="field">
+    <label for="firstname" >Firstname</label>
+    <input id="firstname" pInputText formControlName="username" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <p-password id="password" formControlName="password" [toggleMask]="true" [styleClass]="'w-full'"></p-password>
+  </div>
+  <p-button type="submit" (click)="login()" [disabled]="form.invalid">login</p-button>
+</div>

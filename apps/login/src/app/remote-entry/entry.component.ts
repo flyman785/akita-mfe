@@ -6,8 +6,7 @@ import { LoginFacade, LoginQueries } from '@stores/login';
   template: `
     <ng-container *ngIf="(isLogged$ | async) === true; else FALSE">
       <akita-mfe-display-data></akita-mfe-display-data>
-      <akita-mfe-info-user></akita-mfe-info-user>
-      <button (click)="logout()">logout</button>
+      <p-button (click)="logout()">logout</p-button>
     </ng-container>
     <ng-template #FALSE>
       <akita-mfe-form-login></akita-mfe-form-login>

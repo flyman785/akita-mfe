@@ -5,8 +5,9 @@ import { RouterModule } from '@angular/router';
 import { RemoteEntryComponent } from './entry.component';
 import { remoteRoutes } from './entry.routes';
 import {AuthenticationModule} from '@authentication';
-import {InfoUserModule} from '@akita-mfe/info-user';
 import {mfePrefix} from '@mfe/shared';
+import {ButtonModule} from 'primeng/button';
+import {InfoUserModule} from '@akita-mfe/info-user';
 
 export const entryModuleFactory = (prefix: string = 'loginM') => {
   @NgModule({
@@ -18,6 +19,7 @@ export const entryModuleFactory = (prefix: string = 'loginM') => {
       CommonModule,
       RouterModule.forChild(remoteRoutes),
       AuthenticationModule,
+      ButtonModule,
       InfoUserModule
     ],
     providers: [

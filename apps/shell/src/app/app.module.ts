@@ -7,14 +7,18 @@ import { appRoutes } from './app.routes';
 import { CommonModule } from '@angular/common';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { akitaDevtools } from '@datorama/akita';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedModule} from '@mfe/shared';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-    AkitaNgDevtools.forRoot({maxAge: 25})
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
+    AkitaNgDevtools.forRoot({maxAge: 25}),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {tap} from 'rxjs';
 import {LoginQueries} from '@stores/login';
 
 @Component({
@@ -9,9 +8,7 @@ import {LoginQueries} from '@stores/login';
 })
 export class DisplayDataComponent {
 
-  user$ = this.loginQueries.username$.pipe(
-    tap(v => console.log('vl', v))
-  );
+  user$ = this.loginQueries.username$;
 
   constructor(
     private loginQueries: LoginQueries

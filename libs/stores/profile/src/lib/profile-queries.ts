@@ -15,4 +15,8 @@ export class ProfileQueries extends  Query<ProfileInterfaces> {
   ) {
     super(profileStore);
   }
+
+  get actualRole(): number {
+    return this.getValue().role;
+  }
 }

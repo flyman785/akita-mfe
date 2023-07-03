@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {tap} from 'rxjs';
 import {ProfileFacade, ProfileQueries} from '@stores/profile';
 
 @Component({
@@ -8,9 +7,7 @@ import {ProfileFacade, ProfileQueries} from '@stores/profile';
   styleUrls: ['./info-user.component.scss'],
 })
 export class InfoUserComponent {
-  profile$ = this.profileQueries.profile$.pipe(
-    tap(v => console.log('v', v))
-  );
+  profile$ = this.profileQueries.profile$;
 
   constructor(
     private profileQueries: ProfileQueries,
@@ -19,8 +16,9 @@ export class InfoUserComponent {
   }
 
   update(): void {
+    const role = this.profileQueries.actualRole;
     this.profileFacade.update({
-      role: 1,
+      role: (role + 1),
       city: 'Rome'
     })
   }
